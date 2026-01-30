@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorTracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="window-drag-area">
+        <div class="title">ColorTracker Pro</div>
+        <div class="window-controls">
+            <button id="btn-top" title="Always on Top">📌</button>
+            <button id="btn-minimize">-</button>
+            <button id="btn-close">×</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Status Section -->
+        <div class="glass-panel status-panel">
+            <h2>Status</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <span class="label">Enabled</span>
+                    <span class="value" id="status-enabled">OFF</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Target Color</span>
+                    <span class="value-small" id="status-rgb">Not set</span>
+                    <div class="color-preview" id="status-color"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="glass-panel settings-panel">
+            <h2>Configuration</h2>
+
+            <div class="setting-group">
+                <label>Search Radius <span id="val-radius" class="val-display">50</span>px</label>
+                <input type="range" id="inp-radius" min="1" max="200" value="50">
+            </div>
+
+            <div class="setting-group">
+                <label>Color Tolerance <span id="val-tolerance" class="val-display">24</span></label>
+                <input type="range" id="inp-tolerance" min="0" max="100" value="24">
+            </div>
+
+            <div class="setting-group">
+                <label>Loop Delay (CPU) <span id="val-sleep" class="val-display">1</span>ms</label>
+                <input type="range" id="inp-sleep" min="0" max="500" value="1">
+            </div>
+            <button id="btn-reset-settings" class="small-button">Reset Default Settings</button>
+        </div>
+
+        <!-- Keybinds Section -->
+        <div class="glass-panel keybinds-panel">
+            <h2>Keybinds</h2>
+            <div class="input-group">
+                <label>Enable Key</label>
+                <input type="text" id="inp-key-enable" value="F5" maxlength="3">
+            </div>
+            <div class="input-group">
+                <label>Set Color Key</label>
+                <input type="text" id="inp-key-toggle" value="E" maxlength="1">
+            </div>
+            <button id="btn-reset-keybinds" class="small-button">Reset Default Keybinds</button>
+            <button id="btn-save" class="glow-button">Save Settings</button>
+        </div>
+
+        <!-- Themes Section -->
+        <div class="glass-panel theme-panel">
+            <h2>Themes</h2>
+            <div class="theme-select-container">
+                <select id="sel-theme">
+                    <option value="default">Default (Dark)</option>
+                    <option value="cyberpunk">Cyberpunk (Yellow)</option>
+                    <option value="sunset">Sunset (Red)</option>
+                    <option value="matrix">Matrix (Green)</option>
+                    <option value="midnight">Midnight (Blue)</option>
+                    <option value="forest">Forest (Dark Green)</option>
+                    <option value="royal">Royal (Purple)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

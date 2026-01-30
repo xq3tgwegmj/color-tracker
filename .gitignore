@@ -1,0 +1,12 @@
+# Build artifacts
+ColorTracker.exe
+dist/
+gui/node_modules/
+
+# Config (user-specific)
+config.json
+
+# IDE
+.vscode/
+*.swp
+*.swo
